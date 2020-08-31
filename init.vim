@@ -127,8 +127,7 @@ else
     " Easy commenting
     Plug 'tpope/vim-commentary'
 
-    " Git signs next to line numbers
-    Plug 'airblade/vim-gitgutter'
+    Plug 'mhinz/vim-signify'
 
     " Repeat some plugin commands with '.'
     Plug 'tpope/vim-repeat'

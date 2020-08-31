@@ -113,6 +113,7 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-yaml',
       \ 'coc-pairs',
+      \ 'coc-yank',
       \ ]
 
 autocmd FileType markdown,vimwiki,wiki,md let b:coc_pairs_disabled = ['`']

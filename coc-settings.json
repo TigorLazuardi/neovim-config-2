@@ -20,39 +20,6 @@
   "coc.preferences.formatOnInsertLeave": true,
   "coc.preferences.formatOnType": true,
   "languageserver": {
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php"],
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      }
-    },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        },
-        "clang": {
-          "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0",
-          "extraArgs": [
-            "-isystem",
-            "/Library/Developer/CommandLineTools/usr/include/c++/v1",
-            "-I",
-            "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/"
-          ]
-        }
-      }
-    },
     "golang": {
       "command": "gopls",
       "filetypes": ["go"],
