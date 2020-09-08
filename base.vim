@@ -18,7 +18,7 @@ set timeoutlen=1000 "Set delay between input commands before trigger"
 set updatetime=200 "Time before vim is refreshed. Default 4000, the stronger your pc, the lower you may set it."
 set display+=lastline "Never shortens messages"
 set linebreak "Prevent vim from wrap in the middle of a word"
-set scrolloff=5 "Make sure there's at least few lines visible between cursor and edge of window. Setting to 999 will make the cursor always on middle of screen"
+set scrolloff=999 "Make sure there's at least few lines visible between cursor and edge of window. Setting to 999 will make the cursor always on middle of screen"
 set autoread "Auto reload file if there's outside edit"
 set backspace=indent,eol,start "you may backspace over indentation, endofline, startofline"
 " set foldmethod=syntax

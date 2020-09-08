@@ -11,7 +11,6 @@
     "vim",
     "rust",
     "go",
-    "yaml",
     "python",
     "html",
     "toml",
@@ -19,13 +18,6 @@
   ],
   "coc.preferences.formatOnInsertLeave": true,
   "coc.preferences.formatOnType": true,
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "filetypes": ["go"],
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"]
-    }
-  },
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "prettier.semi": false,

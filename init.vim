@@ -80,13 +80,19 @@ else
     " Ordinary NVIM
     call plug#begin()
 
+    source $CONFIG/theme.vim
+
+    if exists('g:started_by_firenvim')
+      source $CONFIG/firenvim.vim
+    endif
+
     " Vim dev icons
     Plug 'ryanoasis/vim-devicons'
 
     " Snippets
     source $CONFIG/ultisnips.vim
 
-    source $CONFIG/theme.vim
+    source $CONFIG/pencil.vim
 
     " Auto-completion
     source $CONFIG/coc.vim
@@ -161,6 +167,8 @@ else
     source $CONFIG/floaterm.vim
 
     source $CONFIG/ale.vim
+
+    source $CONFIG/markdown.vim
 
     call plug#end()
 
