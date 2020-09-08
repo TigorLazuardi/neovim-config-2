@@ -8,7 +8,7 @@ let g:firenvim_config = {
           \ '.*': {
             \ 'cmdline': 'neovim',
             \ 'priority': 0,
-            \ 'takeover': 'always',
+            \ 'takeover': 'never',
           \ },
         \ }
       \ }
