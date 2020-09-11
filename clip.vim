@@ -17,7 +17,6 @@ xnoremap x d
 
 nnoremap xx dd
 nnoremap X D
-
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 
@@ -25,12 +24,15 @@ nmap p <plug>(YoinkPaste_p)
 nmap P <plug>(YoinkPaste_P)
 
 nmap [p <plug>(YoinkPostPasteToggleFormat)
+let g:left_bracket_key_map.p = ['<plug>(YoinkPostPasteToggleFormat)', 'Toggle last paste']
 
 nmap y <plug>(YoinkYankPreserveCursorPosition)
 xmap y <plug>(YoinkYankPreserveCursorPosition)
 
 nmap [y <plug>(YoinkRotateBack)
 nmap ]y <plug>(YoinkRotateForward)
+let g:left_bracket_key_map.y = ['<plug>(YoinkRotateBack)', 'Select previous clip on register']
+let g:right_bracket_key_map.y = ['<plug>(YoinkRotateForward)', 'Select next clip on register']
 
 let g:yoinkSavePersistently = 1
 let g:yoinkAutoFormatPaste = 0

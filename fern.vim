@@ -4,6 +4,7 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 
 nnoremap <silent> <leader>e :Fern . -reveal=% -drawer -toggle<CR>
+let g:space_key_map.e = [':Fern . -reveal=% -drawer -toggle', 'explorer']
 let g:fern#renderer = "nerdfont"
 let g:fern#default_hidden = 1
 let g:fern#drawer_width = 40

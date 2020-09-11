@@ -30,8 +30,7 @@ let g:gruvbox_italic=1
 
 " Theme Registry
 let g:thematic#themes = {
-      \ 'gruvbox'     :{
-      \                 'colorscheme': 'gruvbox',
+      \ 'gruvbox'     :{'colorscheme': 'gruvbox',
       \                 'background': 'dark',
       \                 'airline-theme': 'gruvbox',
       \                },
@@ -69,14 +68,6 @@ let g:thematic#themes = {
       \                },
       \ }
 
-let g:space_key_map.t = {
-      \ 'name': '+theme',
-      \ 'n' : [':ThematicNext'     ,  'next theme'],
-      \ 'p' : [':ThematicPrevious' ,  'prev theme'],
-      \ 'r' : [':ThematicRandom'   ,  'random theme'],
-      \ 'o' : [':ThematicOriginal' ,  'Original theme'],
-      \ 'f' : [':ThematicFirst'    ,  'first theme'],
-      \ }
 
 autocmd VimEnter * :ThematicRandom
 

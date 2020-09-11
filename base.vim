@@ -14,7 +14,6 @@ set clipboard=unnamedplus "Make vim able to copy and paste from outside vim"
 set encoding=utf8 "Enforces utf-8"
 set cursorline "Highlight where your current line is"
 set termguicolors
-set timeoutlen=1000 "Set delay between input commands before trigger"
 set updatetime=200 "Time before vim is refreshed. Default 4000, the stronger your pc, the lower you may set it."
 set display+=lastline "Never shortens messages"
 set linebreak "Prevent vim from wrap in the middle of a word"
@@ -59,34 +58,6 @@ set signcolumn=number
 " Enable syntax highlighting
 syntax on 
 
-" Alt+J and Alt+K to swap lines
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-k> :m .-2<CR>==gi
-inoremap <A-j> :m .+1<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-" Moving between vim splits without pressing Ctrl+w first. 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-inoremap <c-o> <esc>A<CR> 
-
-nnoremap <silent> <A-n> :bnext!<cr>
-nnoremap <silent> <A-p> :bprev!<cr>
-
-inoremap <silent> <A-n> <esc>:bnext!<cr>
-inoremap <silent> <A-p> <esc>:bprev!<cr>
-
-inoremap jj <esc>
-inoremap kk <esc>
-cnoremap jj <c-c><esc>
-cnoremap kk <c-c><esc>
-xnoremap <tab> <esc>
-
 nnoremap [w :setlocal nowrap<cr>
 nnoremap ]w :setlocal wrap<cr>
 
@@ -114,8 +85,6 @@ au VimEnter * inoremap <c-h> <left>
 " au VimEnter * hi Normal guibg=NONE ctermbg=NONE
 " au BufEnter * hi Normal guibg=NONE ctermbg=NONE
 
-nmap <leader>n :e %:h/
-command! -nargs=1 -complete=help H :vert help <args>
 command! Noh :noh
 command! NOh :noh
 command! NOH :noh
@@ -126,9 +95,3 @@ command! S :source /home/tigor/.config/nvim/init.vim
 nnoremap <silent> ZZ :bd<CR>
 nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <silent> <c-up> :res -1<CR>
-nnoremap <silent> <c-down> :res +1<CR>
-nnoremap <silent> <c-left> :vert res -3<CR>
-nnoremap <silent> <c-right> :vert res +3<CR>
-nnoremap <silent> gq :bd<CR>
-nnoremap <c-s> :w<cr>
