@@ -2,6 +2,10 @@ Plug 'brooth/far.vim'
 
 " set lazyredraw            " improve scrolling performance when navigating through large results
 
+let g:space_key_map = get(g:, 'space_key_map', {})
+let g:space_key_map.f = [':Farf', 'find']
+let g:space_key_map.F = [':Farr', 'find and replace']
+
 let g:far#window_width=80
 " Use %:p with buffer option only
 let g:far#file_mask_favorites=['**/*.ts', '**/*.vim', '**/*.go', '**/*.*']
@@ -10,8 +14,6 @@ let g:far#window_min_content_width=30
 let g:far#enable_undo=1
 let g:far#auto_preview = 1
 
-let g:space_key_map.f = [':Farf', 'find']
-let g:space_key_map.F = [':Farr', 'find and replace']
 
 "     Below are the default mappings and corresponding variable names in
 

@@ -29,6 +29,10 @@ augroup END
 
 let g:space_key_map.d = ['<Plug>(coc-definition)', 'Go To Definition']
 
+let g:space_key_map.e = [':CocCommand explorer', 'explorer']
+" autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+autocmd BufLeave * if &ft == 'coc-explorer' | q | endif
+
 let g:space_key_map.c = {
 			\ 'name': '+lists',
 			\ 'c': [':CocFzfListResume', 'resume previous buffer'],

@@ -92,7 +92,7 @@ else
   source $CONFIG/clip.vim
 
   " File Explorer. Key: <leader>e
-  source $CONFIG/fern.vim
+  " source $CONFIG/fern.vim
 
   " Tags generator
   source $CONFIG/gutentags.vim
