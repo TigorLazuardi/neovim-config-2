@@ -109,7 +109,7 @@ else
   Plug 'sheerun/vim-polyglot'
 
   " Git integration
-  Plug 'tpope/vim-fugitive'
+  source $CONFIG/plugins/fugitive.vim
 
   " Easy commenting
   Plug 'tpope/vim-commentary'
