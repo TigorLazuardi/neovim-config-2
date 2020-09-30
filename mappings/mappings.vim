@@ -18,6 +18,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Now j and k keys don't skip wrapped lines
 nnoremap k gk
 nnoremap j gj
+vnoremap k gk
+vnoremap j gj
 
 if exists('g:vscode')
   " Simulate same TAB behavior in VSCode

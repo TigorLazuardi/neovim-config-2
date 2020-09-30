@@ -1,16 +1,16 @@
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 let g:firenvim_config = { 
-        \ 'globalSettings': {
-          \ 'alt': 'all',
-        \  },
-        \ 'localSettings': {
-          \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'priority': 0,
-            \ 'takeover': 'never',
-          \ },
-        \ }
+      \ 'globalSettings': {
+      \ 'alt': 'all',
+      \  },
+      \ 'localSettings': {
+      \ '.*': {
+      \ 'cmdline': 'neovim',
+      \ 'priority': 0,
+      \ 'takeover': 'never',
+      \ },
+      \ }
       \ }
 
 let g:dont_write = v:false
@@ -24,7 +24,7 @@ function! Delay_My_Write() abort
     return
   end
   let g:dont_write = v:true
-  call timer_start(10000, 'My_Write')
+  call timer_start(2000, 'My_Write')
 endfunction
 
 au TextChanged * ++nested call Delay_My_Write()

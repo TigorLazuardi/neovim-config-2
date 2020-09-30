@@ -55,6 +55,7 @@ if exists('g:vscode')
 else
   " Ordinary NVIM
   call plug#begin()
+  source $CONFIG/settings/settings.vim
 
   " Must be loaded before all else
   source $CONFIG/mappings/whichkey.vim
@@ -154,8 +155,6 @@ else
   source $CONFIG/plugins/lens.vim
 
   call plug#end()
-
-  source $CONFIG/base.vim
 endif
 
 if exists('g:fvim_loaded')

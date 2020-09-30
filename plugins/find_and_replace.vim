@@ -1,10 +1,17 @@
 Plug 'brooth/far.vim'
 
-" set lazyredraw            " improve scrolling performance when navigating through large results
+set lazyredraw            " improve scrolling performance when navigating through large results
 
 let g:space_key_map = get(g:, 'space_key_map', {})
-let g:space_key_map.f = [':Farf', 'find']
+let g:space_key_map.f = [':call QuickSearch()', 'quick find']
 let g:space_key_map.F = [':Farr', 'find and replace']
+
+let g:far#source = 'rgnvim'
+
+fun! QuickSearch() abort
+  let l:currWord = expand('<cword>')
+  execute "F " . l:currWord
+endfun
 
 let g:far#window_width=80
 " Use %:p with buffer option only

@@ -14,6 +14,9 @@
     "python",
     "html",
     "toml",
+    "yaml",
+    "yaml.docker-compose",
+    "yml",
     "dart"
   ],
   "coc.preferences.formatOnInsertLeave": true,
@@ -45,6 +48,10 @@
   "diagnostic.messageTarget": "float",
   "diagnostic.level": "information",
   "diagnostic.checkCurrentLine": true,
+  "go.tags": {
+    "tags": "json",
+    "options": ""
+  },
   "diagnostic.highlightOffset": 1000,
   "diagnostic.virtualTextLineSeparator": " \\ ",
   "diagnostic.virtualTextLines": 3,
