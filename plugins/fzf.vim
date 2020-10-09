@@ -5,6 +5,11 @@ Plug 'junegunn/fzf.vim'
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+nnoremap <silent> <F3> :Ag <c-r><c-w><cr>
+
 let g:space_key_map.s = {
       \ 'name' : '+search' ,
       \ '/' : [':History/'              , 'history'],

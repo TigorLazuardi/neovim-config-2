@@ -11,4 +11,4 @@ fun! IsIgnored()
   return index(map(['fern', 'fzf', 'far', 'fugitive', 'coc-explorer'], '&filetype =~ v:val'), 1) > -1
 endfun
 
-au BufEnter * if !IsIgnored() | call lens#run() | endif
+au BufWinEnter * if !IsIgnored() | call lens#run() | endif

@@ -6,15 +6,6 @@ let g:space_key_map = get(g:, 'space_key_map', {})
 let g:space_key_map.f = [':call QuickSearch()', 'quick find']
 let g:space_key_map.F = [':Farr', 'find and replace']
 
-" QuickSearch
-nnoremap <silent> <F3> :call QuickSearchFar()<cr>
-
-function QuickSearchFar() abort
-  let l:file_ext = expand('%:e') 
-  let l:current_word = expand('<cword>')
-  execute "Far " . l:current_word . " " . l:current_word . " **/*." . l:file_ext
-endfunction
-
 let g:far#source = 'rgnvim'
 
 fun! QuickSearch() abort
@@ -29,6 +20,7 @@ let g:far#default_file_mask = '**/*.*'
 let g:far#window_min_content_width=30
 let g:far#enable_undo=1
 let g:far#auto_preview = 1
+" let g:far#check_window_resize_period = 86400000
 
 
 "     Below are the default mappings and corresponding variable names in
