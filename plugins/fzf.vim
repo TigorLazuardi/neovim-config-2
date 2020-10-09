@@ -3,6 +3,8 @@ if !executable('fzf')
 endif
 Plug 'junegunn/fzf.vim'
 
+let g:space_key_map = get(g:, 'space_key_map', {})
+
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
 " [Buffers] Jump to the existing window if possible

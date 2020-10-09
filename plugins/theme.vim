@@ -15,6 +15,8 @@ Plug 'mhartington/oceanic-next'
 Plug 'cocopon/iceberg.vim'
 Plug 'dracula/vim'
 
+let g:space_key_map = get(g:, 'space_key_map', {})
+
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set shortmess+=F "Surpress editing file info message"

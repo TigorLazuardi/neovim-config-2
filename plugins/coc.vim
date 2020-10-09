@@ -3,6 +3,8 @@ Plug 'neoclide/coc-neco'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
+let g:space_key_map = get(g:, 'space_key_map', {})
+
 set hidden
 set nobackup
 set nowritebackup

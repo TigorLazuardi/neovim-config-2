@@ -43,7 +43,7 @@ if exists('g:vscode')
   Plug 'tpope/vim-repeat'
 
   " Clipboard Management
-  source $CONFIG/clip.vim
+  source $CONFIG/plugins/clip.vim
 
   call plug#end()
 
@@ -54,8 +54,8 @@ if exists('g:vscode')
   set hlsearch "When searching, the text is highlighted
 else
   " Ordinary NVIM
-  call plug#begin()
   source $CONFIG/settings/settings.vim
+  call plug#begin()
 
   " Must be loaded before all else
   source $CONFIG/mappings/whichkey.vim
@@ -65,12 +65,6 @@ else
   for f in split(glob('~/.config/nvim/plugins/*.vim'), '\n')
     exe 'source' f
   endfor
-
-  source $CONFIG/theme.vim
-
-  if exists('g:started_by_firenvim')
-    source $CONFIG/firenvim.vim
-  endif
 
   " Vim dev icons
   Plug 'ryanoasis/vim-devicons'
