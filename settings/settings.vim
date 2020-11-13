@@ -3,7 +3,7 @@ set formatoptions-=cro                  " Stop newline continution of comments
 syntax enable                           " Enables syntax highlighing
 set encoding=utf-8                      " The encoding displayed
 " set pumheight=10                        " Makes popup menu smaller
-set fileencoding=utf-8                  " The encoding written to file
+set fileencoding=utf-8
 
 set ignorecase "When searching, make the search case insensitive
 set hlsearch "When searching, the text is highlighted
@@ -30,28 +30,27 @@ set backspace=indent,eol,start "you may backspace over indentation, endofline, s
 set nofoldenable        "dont fold by default
 set mouse=a
 
-if !isdirectory($HOME . "/.config/nvim/backup")
-  call mkdir($HOME . "/.config/nvim/backup", "p", 0700)
+if !isdirectory(g:config . '/backup')
+  call mkdir(g:config . '/backup', "p", 0700)
 endif
-set backupdir=~/.config/nvim/backup "set backup dir cache"
 
+set backupdir=g:config.'\backup'
 set formatoptions+=j "When editing a comment, and in insert mode you press enter, there's a leading comment added"
 set noswapfile "Disable swap file. Makes my life easier to be honest, but make sure to save frequently"
 set nrformats-=octal
-
-if !isdirectory($HOME . "/.config/nvim/undodir")
-  call mkdir($HOME . "/.config/nvim/undodir", "p", 0700)
+if !isdirectory(g:config . '/undodir')
+  call mkdir(g:config . '/undodir', "p", 0700)
 endif
-set undodir=$HOME/.config/nvim/undodir "Make undo persistent between sessions
-set splitbelow "Horizontal split appears on bottom
-set splitright "Vertical split appears on right
-set incsearch "Start searching before pressing enter
 
-if !isdirectory($HOME . "/.config/nvim/tmp")
-  call mkdir($HOME . "/.config/nvim/tmp", "p", 0700)
+set undodir=g:config.'\undodir'
+set splitbelow
+set splitright
+set incsearch
+
+if !isdirectory(g:config.'/tmp')
+  call mkdir(g:config.'/tmp', "p", 0700)
 endif
-set directory=~/.config/nvim/tmp
-" Prevent auto enter
+set directory=g:config.'/tmp'
 set formatoptions-=tc
 set path+=**
 set number relativenumber
@@ -59,7 +58,6 @@ set wildmenu
 set wildignore+=**/node_modules/** 
 set wildmode=longest:full,list:full
 set signcolumn=number
-
 
 " Enable syntax highlighting
 syntax on 
@@ -71,33 +69,3 @@ nnoremap ]w :setlocal wrap<cr>
 cmap fs w! !sudo tee > /dev/null %
 
 set norelativenumber
-
-" augroup numbertoggle
-"   autocmd!
-"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-" augroup END
-
-" Press F12 to reload config
-if has('unix')
-  nmap <silent><F12> :source $HOME/.config/nvim/init.vim<CR>:echo "Config reloaded"<CR>
-  nmap <silent><F11> :e $HOME/.config/nvim/
-endif
-
-au VimEnter * inoremap <c-l> <right>
-au VimEnter * inoremap <c-h> <left>
-
-" Transparent background
-" au VimEnter * hi Normal guibg=NONE ctermbg=NONE
-" au BufEnter * hi Normal guibg=NONE ctermbg=NONE
-
-command! Noh :noh
-command! NOh :noh
-command! NOH :noh
-command! S :source /home/tigor/.config/nvim/init.vim
-
-" cnoreabbrev wq w<bar>bd
-" cnoreabbrev q bd
-nnoremap <silent> ZZ :bd<CR>
-nnoremap <silent> [o :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
-nnoremap <silent> ]o :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>

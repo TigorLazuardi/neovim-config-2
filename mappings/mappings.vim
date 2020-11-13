@@ -21,92 +21,79 @@ nnoremap j gj
 vnoremap k gk
 vnoremap j gj
 
-if exists('g:vscode')
-  " Simulate same TAB behavior in VSCode
-  nmap <Tab> :Tabnext<CR>
-  nmap <S-Tab> :Tabprev<CR>
+" Easy go to end of line or start of line
+nnoremap gh ^
+nnoremap gl $
+vnoremap gh ^
+vnoremap gl $
 
-  xmap gc  <Plug>VSCodeCommentary
-  nmap gc  <Plug>VSCodeCommentary
-  omap gc  <Plug>VSCodeCommentary
-  nmap gcc <Plug>VSCodeCommentaryLine
+nnoremap gt *
+vnoremap gt *
+nnoremap gT #
+vnoremap gT #
 
-  nnoremap xx dd
-  nnoremap X D
-  nnoremap <silent> ? :<C-u>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
-  nnoremap <silent> gn :<C-u>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
-  nnoremap <silent> gp :<C-u>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
-  nnoremap <silent> gr :<C-u>call VSCodeNotify('goToNextReference')<CR>
-  nnoremap <silent> gR :<C-u>call VSCodeNotify('goToPreviousReference')<CR>
-  nnoremap <silent> gl :<C-u>call VSCodeNotify('editor.action.openLink')<CR>
-  nnoremap <silent> gh :<C-u>call VSCodeNotify('closeMarkersNavigation')<CR>
-  nnoremap <silent> K :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
+" Delete buffer instead of quit
+nnoremap <silent> ZZ :bd<CR>
+" I hate escape more than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
 
-else
+" Alternate way to save
+nnoremap <silent> <C-s> :w<CR>
+" Alternate way to quit
+nnoremap <silent> <C-Q> :wq!<CR>
+" Use control-c instead of escape
+inoremap <silent> <C-c> <Esc>
+" <TAB>: completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <silent> <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-  " Delete buffer instead of quit
-  nnoremap <silent> ZZ :bd<CR>
-  " I hate escape more than anything else
-  inoremap jk <Esc>
-  inoremap kj <Esc>
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-  " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
-  " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
-  " Use control-c instead of escape
-  inoremap <silent> <C-c> <Esc>
-  " <TAB>: completion.
-  inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <silent> <expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" Terminal window navigation
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+inoremap <C-h> <C-\><C-N><C-w>h
+inoremap <C-j> <C-\><C-N><C-w>j
+inoremap <C-k> <C-\><C-N><C-w>k
+inoremap <C-l> <C-\><C-N><C-w>l
+tnoremap <Esc> <C-\><C-n>
 
-  " Better window navigation
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-l> <C-w>l
+" Moving between vim splits without pressing Ctrl+w first. 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-  " Terminal window navigation
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  tnoremap <Esc> <C-\><C-n>
+" Move buffer with alt + n or alt + p
+nnoremap <silent> <A-n> :bnext!<cr>
+nnoremap <silent> <A-p> :bprev!<cr>
+inoremap <silent> <A-n> <esc>:bnext!<cr>
+inoremap <silent> <A-p> <esc>:bprev!<cr>
 
-  " Moving between vim splits without pressing Ctrl+w first. 
-  nnoremap <C-J> <C-W><C-J>
-  nnoremap <C-K> <C-W><C-K>
-  nnoremap <C-L> <C-W><C-L>
-  nnoremap <C-H> <C-W><C-H>
+" Better nav for omnicomplete
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
 
-  " Move buffer with alt + n or alt + p
-  nnoremap <silent> <A-n> :bnext!<cr>
-  nnoremap <silent> <A-p> :bprev!<cr>
-  inoremap <silent> <A-n> <esc>:bnext!<cr>
-  inoremap <silent> <A-p> <esc>:bprev!<cr>
+inoremap <expr> <c-l> ("\<right>")
+inoremap <expr> <c-h> ("\<left>")
 
-  " Better nav for omnicomplete
-  inoremap <expr> <c-j> ("\<C-n>")
-  inoremap <expr> <c-k> ("\<C-p>")
+" TAB in general mode will move to text buffer
+nnoremap <silent> <TAB> :bnext!<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <S-TAB> :bprevious!<CR>
 
-  inoremap <expr> <c-l> ("\<right>")
-  inoremap <expr> <c-h> ("\<left>")
+" Alternate way to save
+nnoremap <silent> <C-s> :w<CR>
 
-  " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext!<CR>
-  " SHIFT-TAB will go back
-  nnoremap <silent> <S-TAB> :bprevious!<CR>
+" Alternate way to quit
+nnoremap <silent> <C-Q> :wq!<CR>
 
-  " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
-
-  " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
-
-  " Press F12 to reload config
-  nnoremap <silent><F12> :source $MYVIMRC<cr>:echo "Config reload"<cr>
-endif
+" Press F12 to reload config
+nnoremap <silent><F12> :source $MYVIMRC<cr>:echo "Config reload"<cr>

@@ -1,4 +1,3 @@
-Plug 'liuchengxu/vim-which-key'
 
 " Map leader to which_key
 nnoremap <silent> <space> :<c-u>WhichKey '<Space>'<CR>
@@ -25,8 +24,8 @@ let g:which_key_sep = '=>'
 let g:which_key_use_floating_win = 0
 
 let g:space_key_map = get(g:, 'space_key_map', {})
-let g:left_bracket_key_map = {}
-let g:right_bracket_key_map = {}
+let g:left_bracket_key_map = get(g:, 'left_bracket_key_map', {})
+let g:right_bracket_key_map = get(g:, 'left_bracket_key_map', {})
 
 let g:left_bracket_key_map.w = ['setlocal no wrap', 'Remove wrap on current buffer']
 let g:right_bracket_key_map.w = ['setlocal wrap', 'Turns on wrap for current buffer']
@@ -41,6 +40,24 @@ let g:space_key_map.w = {
       \ 'd': ['bd', 'delete'],
       \ 'D': ['bd!', 'delete (force)'],
       \ }
+
+let g:space_key_map.t = {
+      \ 'name': '+toggles',
+      \ 'w': [':set wrap!', 'wrap'],
+      \ 'n': [':set number!', 'number lines'],
+      \ 'q': [':call QuickfixToggle()', 'quick fix'],
+      \ }
+
+function! QuickfixToggle()
+  let g:quickfix_is_open = get(g:, 'quickfix_is_open', 0)
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+  else
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
 
 au VimEnter * call which_key#register('<space>', 'g:space_key_map')
 au VimEnter * call which_key#register('[', 'g:left_bracket_key_map')

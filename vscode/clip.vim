@@ -2,9 +2,6 @@ Plug 'svermeulen/vim-subversive'
 Plug 'svermeulen/vim-cutlass'
 Plug 'svermeulen/vim-yoink'
 
-let g:left_bracket_key_map = get(g:, 'left_bracket_key_map', {})
-let g:right_bracket_key_map = get(g:, 'right_bracket_key_map', {})
-
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
 nmap S <plug>(SubversiveSubstituteToEndOfLine)
