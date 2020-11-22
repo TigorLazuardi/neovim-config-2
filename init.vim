@@ -1,6 +1,12 @@
-let g:split_rc = split($MYVIMRC, '/')
-let g:config_folder = g:split_rc[0:-2]
-let g:config = '/'.join(g:config_folder, '/')
+if has('win32')
+  let g:split_rc = split($MYVIMRC, '\')
+  let g:config_folder = g:split_rc[0:-2]
+  let g:config = join(g:config_folder, '\')	
+else
+  let g:split_rc = split($MYVIMRC, '/')
+  let g:config_folder = g:split_rc[0:-2]
+  let g:config = '/'.join(g:config_folder, '/')
+endif
 
 exe 'source '.g:config.'/mappings/commands.vim'
 exe 'source '.g:config.'/settings/settings.vim'
