@@ -1,4 +1,5 @@
-set iskeyword+=-                      	" treat dash separated words as a word text object"set nocompatible "Remove compability with older versions.
+set iskeyword+=-                      	" treat dash separated words as a word text object"
+set nocompatible "Remove compability with older versions.
 set formatoptions-=cro                  " Stop newline continution of comments
 syntax enable                           " Enables syntax highlighing
 set encoding=utf-8                      " The encoding displayed
@@ -33,7 +34,6 @@ set mouse=a
 if !isdirectory(g:config . '/backup')
   call mkdir(g:config . '/backup', "p", 0700)
 endif
-
 set backupdir=g:config.'\backup'
 set formatoptions+=j "When editing a comment, and in insert mode you press enter, there's a leading comment added"
 set noswapfile "Disable swap file. Makes my life easier to be honest, but make sure to save frequently"
@@ -55,12 +55,12 @@ set formatoptions-=tc
 set path+=**
 set number relativenumber
 set wildmenu
-set wildignore+=**/node_modules/** 
+set wildignore+=**/node_modules/**
 set wildmode=longest:full,list:full
 set signcolumn=number
 
 " Enable syntax highlighting
-syntax on 
+syntax on
 
 nnoremap [w :setlocal nowrap<cr>
 nnoremap ]w :setlocal wrap<cr>

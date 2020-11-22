@@ -17,9 +17,15 @@ if exists('g:vscode')
   for f in split(glob(g:config.'/vscode/*.vim'), '\n')
     exe 'source' f
   endfor
+elseif exists('g:started_by_firenvim')
+  for f in split(glob(g:config.'/firenvim/*.vim'), '\n')
+    exe 'source' f
+  endfor
 else
   exe 'source '.g:config.'/mappings/mappings.vim'
   for f in split(glob(g:config.'/plugins/*.vim'), '\n')
     exe 'source' f
   endfor
 endif
+
+call plug#end()
