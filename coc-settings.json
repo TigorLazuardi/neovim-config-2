@@ -30,7 +30,6 @@
   "prettier.tabWidth": 2,
   "python.jediEnabled": false,
   "python.formatting.provider": "autopep8",
-  "signature.floatMaxWidth": 100,
   "codeLens.enable": false,
   "codeLens.separator": "⬅",
   "suggest.noselect": true,
