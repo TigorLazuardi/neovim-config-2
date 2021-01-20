@@ -17,7 +17,7 @@ set autoindent "When you press enter on a tabbed line, Next line is idented prop
 set smartindent "Indent enhancement"
 set smarttab "tab enhancement"
 set textwidth=100 "The text width before vim wraps the line"
-set clipboard=unnamedplus "Make vim able to copy and paste from outside vim"
+set clipboard=unnamed,unnamedplus "Make vim able to copy and paste from outside vim"
 set encoding=utf8 "Enforces utf-8"
 set cursorline "Highlight where your current line is"
 set termguicolors
@@ -34,7 +34,7 @@ set mouse=a
 if !isdirectory(g:config . '/backup')
   call mkdir(g:config . '/backup', "p", 0700)
 endif
-set backupdir=g:config.'\backup'
+set backupdir=g:config.'/backup'
 set formatoptions+=j "When editing a comment, and in insert mode you press enter, there's a leading comment added"
 set noswapfile "Disable swap file. Makes my life easier to be honest, but make sure to save frequently"
 set nrformats-=octal
@@ -42,7 +42,7 @@ if !isdirectory(g:config . '/undodir')
   call mkdir(g:config . '/undodir', "p", 0700)
 endif
 
-set undodir=g:config.'\undodir'
+set undodir=g:config.'/undodir'
 set splitbelow
 set splitright
 set incsearch

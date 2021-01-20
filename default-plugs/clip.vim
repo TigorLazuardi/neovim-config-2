@@ -40,5 +40,6 @@ let g:right_bracket_key_map.y = ['<plug>(YoinkRotateForward)', 'Select next clip
 let g:yoinkSavePersistently = 1
 let g:yoinkAutoFormatPaste = 0
 let g:yoinkIncludeDeleteOperations = 1
+let g:yoinkSyncSystemClipboardOnFocus = 1
 
 set shada=!,'100,<50,s10,h
