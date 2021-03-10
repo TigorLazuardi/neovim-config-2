@@ -34,6 +34,7 @@ nnoremap <silent> gP :<C-u>call VSCodeNotify('editor.action.marker.prevInFiles')
 nnoremap <silent> gr :<C-u>call VSCodeNotify('goToNextReference')<CR>
 nnoremap <silent> gR :<C-u>call VSCodeNotify('goToPreviousReference')<CR>
 nnoremap <silent> K :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
+nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
 
 function! s:switchEditorCustom(...) abort
   let count = a:1

@@ -1,16 +1,16 @@
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 let g:firenvim_config = {
-        \ 'globalSettings': {
-          \ 'alt': 'all',
-        \  },
-        \ 'localSettings': {
-          \ '.*': {
-          \ 'cmdline': 'neovim',
-          \ 'priority': 0,
-          \ 'takeover': 'never',
-          \ },
-        \ }
+      \ 'globalSettings': {
+      \ 'alt': 'all',
+      \  },
+      \ 'localSettings': {
+      \ '.*': {
+      \ 'cmdline': 'neovim',
+      \ 'priority': 0,
+      \ 'takeover': 'never',
+      \ },
+      \ }
       \ }
 
 let g:dont_write = v:false
