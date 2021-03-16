@@ -31,7 +31,8 @@ nnoremap <silent> gn :<C-u>call VSCodeNotify('editor.action.marker.next')<CR>
 nnoremap <silent> gN :<C-u>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
 nnoremap <silent> gp :<C-u>call VSCodeNotify('editor.action.marker.prev')<CR>
 nnoremap <silent> gP :<C-u>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
-nnoremap <silent> gr :<C-u>call VSCodeNotify('goToNextReference')<CR>
+nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
+nnoremap <silent> gs :<C-u>call VSCodeNotify('workbench.action.gotoSymbol')<CR>
 nnoremap <silent> gR :<C-u>call VSCodeNotify('goToPreviousReference')<CR>
 nnoremap <silent> K :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
 nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
