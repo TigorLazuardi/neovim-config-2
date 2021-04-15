@@ -12,21 +12,21 @@ set nowritebackup
 inoremap <silent><expr> <c-space> coc#refresh()
 
 inoremap <silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" : "\<TAB>" 
+      \ pumvisible() ? "\<C-n>" :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" : "\<TAB>" 
 
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 augroup coc_autos
-	au!
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-	autocmd FileType json syntax match Comment +\/\/.\+$+
+  au!
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd FileType json syntax match Comment +\/\/.\+$+
 augroup END
 
 let g:space_key_map.d = ['<Plug>(coc-definition)', 'Go To Definition']
@@ -36,55 +36,55 @@ let g:space_key_map.e = [':CocCommand explorer', 'explorer']
 autocmd BufLeave * if &ft == 'coc-explorer' | q | endif
 
 let g:space_key_map.c = {
-			\ 'name': '+lists',
-			\ 'c': [':CocFzfListResume', 'resume previous buffer'],
-			\ 'C': [':CocFzfList', 'list coc lists in fzf buffer'],
-			\ 'D': [':CocFzfList diagnostics --current-buf', 'diagnostics (current buffer)'],
-			\ 'd': [':CocFzfList diagnostics', 'diagnostics'],
-			\ 'x': [':CocFzfList commands', 'commands'],
-			\ 'e': [':CocFzfList extensions', 'extensions'],
-			\ 'l': [':CocFzfList locations', 'locations'],
-			\ 'o': [':CocFzfList outline', 'outline'],
-			\ 's': [':CocFzfList symbols', 'symbols'],
-			\ }
+      \ 'name': '+lists',
+      \ 'c': [':CocFzfListResume', 'resume previous buffer'],
+      \ 'C': [':CocFzfList', 'list coc lists in fzf buffer'],
+      \ 'D': [':CocFzfList diagnostics --current-buf', 'diagnostics (current buffer)'],
+      \ 'd': [':CocFzfList diagnostics', 'diagnostics'],
+      \ 'x': [':CocFzfList commands', 'commands'],
+      \ 'e': [':CocFzfList extensions', 'extensions'],
+      \ 'l': [':CocFzfList locations', 'locations'],
+      \ 'o': [':CocFzfList outline', 'outline'],
+      \ 's': [':CocFzfList symbols', 'symbols'],
+      \ }
 
 let g:space_key_map.l = {
-			\ 'name' : '+lsp' ,
-			\ '.' : [':CocConfig'                          , 'config'],
-			\ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-			\ 'a' : ['<Plug>(coc-codeaction)'              , 'line action'],
-			\ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-			\ 'b' : [':CocNext'                            , 'next action'],
-			\ 'B' : [':CocPrev'                            , 'prev action'],
-			\ 'c' : [':CocList commands'                   , 'commands'],
-			\ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-			\ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-			\ 'e' : [':CocList extensions'                 , 'extensions'],
-			\ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-			\ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-			\ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-			\ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-			\ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-			\ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-			\ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-			\ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-			\ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
-			\ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
-			\ 'O' : [':CocList outline'                    , 'outline'],
-			\ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-			\ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-			\ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-			\ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
-			\ 'R' : ['<Plug>(coc-references)'              , 'references'],
-			\ 's' : [':CocList -I symbols'                 , 'references'],
-			\ 'S' : [':CocList snippets'                   , 'snippets'],
-			\ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-			\ 'u' : [':CocListResume'                      , 'resume list'],
-			\ 'U' : [':CocUpdate'                          , 'update CoC'],
-			\ 'v' : [':Vista!!'                            , 'tag viewer'],
-			\ 'z' : [':CocDisable'                         , 'disable CoC'],
-			\ 'Z' : [':CocEnable'                          , 'enable CoC'],
-			\ }
+      \ 'name' : '+lsp' ,
+      \ '.' : [':CocConfig'                          , 'config'],
+      \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
+      \ 'a' : ['<Plug>(coc-codeaction)'              , 'line action'],
+      \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
+      \ 'b' : [':CocNext'                            , 'next action'],
+      \ 'B' : [':CocPrev'                            , 'prev action'],
+      \ 'c' : [':CocList commands'                   , 'commands'],
+      \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
+      \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
+      \ 'e' : [':CocList extensions'                 , 'extensions'],
+      \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
+      \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
+      \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
+      \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
+      \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
+      \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
+      \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
+      \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
+      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
+      \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
+      \ 'O' : [':CocList outline'                    , 'outline'],
+      \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
+      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
+      \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
+      \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
+      \ 'R' : ['<Plug>(coc-references)'              , 'references'],
+      \ 's' : [':CocList -I symbols'                 , 'references'],
+      \ 'S' : [':CocList snippets'                   , 'snippets'],
+      \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
+      \ 'u' : [':CocListResume'                      , 'resume list'],
+      \ 'U' : [':CocUpdate'                          , 'update CoC'],
+      \ 'v' : [':Vista!!'                            , 'tag viewer'],
+      \ 'z' : [':CocDisable'                         , 'disable CoC'],
+      \ 'Z' : [':CocEnable'                          , 'enable CoC'],
+      \ }
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -137,7 +137,7 @@ imap <c-m> <Plug>(coc-snippets-expand-jump)
 vmap <c-m> <Plug>(coc-snippets-expand-jump)
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
-			\ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <Tab> pumvisible() ? "\<c-n>" : "\<Tab>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\<c-y>"
@@ -150,22 +150,23 @@ nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#u
 
 
 let g:coc_global_extensions = [
-			\ 'coc-tsserver', 
-			\ 'coc-word', 
-			\ 'coc-vimlsp', 
-			\ 'coc-tag',
-			\ 'coc-json',
-			\ 'coc-emoji',
-			\ 'coc-prettier',
-			\ 'coc-emoji',
-			\ 'coc-emmet',
-			\ 'coc-dictionary',
-			\ 'coc-diagnostic',
-			\ 'coc-yaml',
-			\ 'coc-pairs',
-			\ 'coc-yank',
-			\ 'coc-snippets',
-			\ ]
+      \ 'coc-tsserver', 
+      \ 'coc-explorer',
+      \ 'coc-word', 
+      \ 'coc-vimlsp', 
+      \ 'coc-tag',
+      \ 'coc-json',
+      \ 'coc-emoji',
+      \ 'coc-prettier',
+      \ 'coc-emoji',
+      \ 'coc-emmet',
+      \ 'coc-dictionary',
+      \ 'coc-diagnostic',
+      \ 'coc-yaml',
+      \ 'coc-pairs',
+      \ 'coc-yank',
+      \ 'coc-snippets',
+      \ ]
 
 autocmd FileType markdown,vimwiki,wiki,md let b:coc_pairs_disabled = ['`']
 inoremap <silent> <cr> <C-g>u<CR><c-r>=coc#on_enter()<CR>

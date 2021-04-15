@@ -27,6 +27,7 @@ else
   for f in split(glob(g:config.'/default-plugs/*.vim'), '\n')
     exe 'source' f
   endfor
+  exe 'source '.g:config.'/firenvim/firenvim.vim'
 endif
 
 call plug#end()
