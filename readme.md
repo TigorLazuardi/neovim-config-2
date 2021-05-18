@@ -1,8 +1,8 @@
 How to use:
 
 ```shell
-cd $HOME/.config/nvim
-git clone https://github.com/TigorLazuardi/neovim-config-2.git
+cd $HOME/.config
+git clone https://github.com/TigorLazuardi/neovim-config-2.git nvim
 ```
 
 Changes from Normal Keys:
