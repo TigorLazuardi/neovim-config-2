@@ -1,9 +1,12 @@
 How to use:
 
+run these commands
 ```shell
 cd $HOME/.config
 git clone https://github.com/TigorLazuardi/neovim-config-2.git nvim
+nvim +PlugInstall
 ```
+then exit. ReOpen neovim
 
 # Default-Plugs
 
