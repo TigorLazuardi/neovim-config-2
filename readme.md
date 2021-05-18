@@ -2,7 +2,7 @@ How to use:
 
 ```shell
 cd $HOME/.config/nvim
-git clone https://github.com/TigorLazuardi/neovim-config.git
+git clone https://github.com/TigorLazuardi/neovim-config-2.git
 ```
 
 Changes from Normal Keys:
