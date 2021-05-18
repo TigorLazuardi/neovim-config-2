@@ -5,26 +5,14 @@ cd $HOME/.config
 git clone https://github.com/TigorLazuardi/neovim-config-2.git nvim
 ```
 
-Changes from Normal Keys:
+# Default-Plugs
 
-# Normal Mode:
+Extension that runs when using neovim.
 
-`s` motion for substitute (delete text object and replace with clipboard)
+# Vscode
 
-Find motion now spans multi-lines
+Extension that runs when using NeoVim backend with VSCode front end
 
-- gd - go to definition
+# firenvim
 
-- ge - go to next error
-
-- gE - go to previous error
-
-- Leader key is `<space>`
-
-- `<leader>`e for explorer
-
-- `<leader>`w for swift-motion
-
-- `<F12>` to reload config
-
-- `<Tab>` when mini-buffer to choose input
+Extension that runs when using neovim backend for browser text editings
