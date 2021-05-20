@@ -24,6 +24,7 @@ elseif exists('g:started_by_firenvim')
   endfor
 else
   exe 'source '.g:config.'/mappings/mappings.vim'
+  exe 'source '.g:config.'/firenvim/firenvim.vim'
   for f in split(glob(g:config.'/default-plugs/*.vim'), '\n')
     exe 'source' f
   endfor
