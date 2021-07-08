@@ -57,7 +57,10 @@ set number relativenumber
 set wildmenu
 set wildignore+=**/node_modules/**
 set wildmode=longest:full,list:full
-set signcolumn=number
+
+if !exists('g:gui_oni')
+  set signcolumn=number
+endif
 
 " Enable syntax highlighting
 syntax on

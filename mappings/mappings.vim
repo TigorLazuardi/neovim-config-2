@@ -77,10 +77,6 @@ nnoremap <silent> <A-p> :bprev!<cr>
 inoremap <silent> <A-n> <esc>:bnext!<cr>
 inoremap <silent> <A-p> <esc>:bprev!<cr>
 
-" Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
-
 inoremap <expr> <c-l> ("\<right>")
 inoremap <expr> <c-h> ("\<left>")
 

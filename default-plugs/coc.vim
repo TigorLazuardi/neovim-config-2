@@ -143,11 +143,13 @@ inoremap <silent><expr> <S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
 inoremap <silent><expr> <c-y> pumvisible() ? coc#_select_confirm() : "\<c-y>"
 
 
-inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
-inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
-nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
-nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+" inoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+" inoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
+" nnoremap <expr><c-d> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(1) : "\<c-d>"
+" nnoremap <expr><c-u> coc#util#has_float() && coc#util#float_scrollable() ? coc#util#float_scroll(0) : "\<c-u>"
 
+nnoremap <nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-j>"
+nnoremap <nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-k>"
 
 let g:coc_global_extensions = [
       \ 'coc-tsserver', 
